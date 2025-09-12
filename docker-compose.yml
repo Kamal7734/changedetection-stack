@@ -1,0 +1,75 @@
+services:
+  changedetection:
+    container_name: changedetection
+    image: dgtlmoon/changedetection.io
+    restart: unless-stopped
+    depends_on:
+      browser-sockpuppet-chrome:
+        condition: service_started
+    volumes:
+      - changedetection-data:/datastore
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - BASE_URL=${BASE_URL}
+      - USE_X_SETTINGS=1
+      - PLAYWRIGHT_DRIVER_URL=ws://browser-sockpuppet-chrome:3000
+      - TZ=${TZ}
+    hostname: changedetection
+    networks:
+      - changedetection-net
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 512M
+        reservations:
+          cpus: '0.25'
+          memory: 256M
+
+  browser-sockpuppet-chrome:
+    image: dgtlmoon/sockpuppetbrowser:latest
+    restart: unless-stopped
+    environment:
+      - SCREEN_WIDTH=1920
+      - SCREEN_HEIGHT=1024
+      - SCREEN_DEPTH=16
+      - MAX_CONCURRENT_CHROME_PROCESSES=10
+    cap_add:
+      - SYS_ADMIN
+    hostname: browser-sockpuppet-chrome
+    networks:
+      - changedetection-net
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+          memory: 2G
+        reservations:
+          cpus: '0.5'
+          memory: 1G
+
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    restart: always
+    environment:
+      - TUNNEL_TOKEN=${CLOUDFLARE_TUNNEL_TOKEN}
+    depends_on:
+      - changedetection
+    networks:
+      - changedetection-net
+    command: tunnel --no-autoupdate run --url http://changedetection:5000
+    deploy:
+      resources:
+        limits:
+          cpus: '0.25'
+          memory: 128M
+        reservations:
+          cpus: '0.1'
+          memory: 64M
+
+volumes:
+  changedetection-data: null
+
+networks:
+  changedetection-net: null
