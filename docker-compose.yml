@@ -16,6 +16,15 @@ services:
       - PLAYWRIGHT_DRIVER_URL=ws://browser-sockpuppet-chrome:3000
       - TZ=${TZ}
     hostname: changedetection
+    healthcheck:
+      test: [
+        "CMD-SHELL",
+        "python3 -c \"import sys, urllib.request; sys.exit(1) if '<title>Change Detection</title>' not in urllib.request.urlopen('http://localhost:5000').read().decode('utf-8') else sys.exit(0)\""
+          ]
+      interval: 1m
+      timeout: 10s
+      retries: 3
+      start_period: 20s
     networks:
       - changedetection-net
     deploy:
@@ -38,6 +47,12 @@ services:
     cap_add:
       - SYS_ADMIN
     hostname: browser-sockpuppet-chrome
+    healthcheck:
+      test: "python3 /usr/src/app/docker-health-check.py --host http://localhost"
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
     networks:
       - changedetection-net
     deploy:
